@@ -2,9 +2,6 @@
 
 Nextock Visualizer is a Next.js application for visualizing and analyzing stock price data. The application includes features for viewing data in table and chart formats, applying filters, and comparing stock metrics.
 
-## Live Demo
-
-You can view the live demo of the application here: [Nextock Visualizer Live Demo](https://your-live-link.com)
 
 ## Setup Instructions
 

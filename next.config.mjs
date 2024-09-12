@@ -1,4 +1,10 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    output: 'export',
+    basePath: '/nextock-visualizer', // Set this to the repository name
+    trailingSlash: true,
+  }
+  
+  export default nextConfig
+  

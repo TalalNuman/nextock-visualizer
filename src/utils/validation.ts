@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import { isValidDate } from "./date";
 
 export const validTickers: string[] = [

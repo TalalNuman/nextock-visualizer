@@ -1,7 +1,7 @@
 // src/components/StockTable.tsx
 import React, { useState, useMemo } from "react";
 import { Pagination } from "./Pagination";
-import { StockData, TableStockData } from "@/types";
+import { TableStockData } from "@/types";
 
 interface TableData {
   data: TableStockData[];

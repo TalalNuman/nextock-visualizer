@@ -6,7 +6,7 @@ import React, { useState } from "react";
 interface FilterModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onApplyFilters: (filters: Record<string, any>) => void;
+  onApplyFilters: (filters: Record<string, string | boolean>) => void;
 }
 
 export const FilterModal: React.FC<FilterModalProps> = ({

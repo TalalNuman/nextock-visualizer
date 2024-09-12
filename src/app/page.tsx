@@ -24,7 +24,7 @@ const HomePage = () => {
     "close" | "open" | "high" | "low" | "volume"
   >("close");
 
-  const fetchData = async (params: Record<string, any>) => {
+  const fetchData = async (params: Record<string, string | boolean>) => {
     try {
       const response = await getStocks(params);
       setData(response.data);
