@@ -31,9 +31,6 @@ export async function GET(request: Request) {
   }
 
   try {
-    console.log(ticker, "ticker");
-    console.log(startDate, "start");
-    console.log(endDate, "endDate");
     const filteredData: StockData[] = await filterStockData(
       ticker,
       startDate,
@@ -85,7 +82,6 @@ export async function GET(request: Request) {
       return NextResponse.json({ data: filteredData });
     }
   } catch (error) {
-    console.error("Error fetching stock data:", error);
     return NextResponse.json(
       { error: "Error fetching stock data" },
       { status: 500 }

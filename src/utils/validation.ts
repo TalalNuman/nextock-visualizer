@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { isValidDate } from "./date";
 
-const validTickers: string[] = [
+export const validTickers: string[] = [
   "AAL",
   "AAPL",
   "AMZN",
@@ -16,7 +16,6 @@ export function paramValidation(
   startDate: string,
   endDate: string
 ): string | null {
-  console.log(ticker, "ticker");
   // Validation: Check if ticker is valid
   if (ticker && !validTickers.includes(ticker.toUpperCase())) {
     return `Invalid ticker: ${ticker}. Allowed tickers are: ${validTickers.join(

@@ -1,13 +1,14 @@
 // src/components/StockForm.tsx
-import { useState } from 'react';
+import { StockFormProps } from "@/types";
+import { useState } from "react";
 
-export const StockForm = ({ onSubmit }) => {
-  const [ticker, setTicker] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+export const StockForm: React.FC<StockFormProps> = ({ onSubmit }) => {
+  const [ticker, setTicker] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [checkCalculateReturns, setCheckCalculateReturns] = useState(false);
 
- const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = {
@@ -21,10 +22,15 @@ export const StockForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto"
+    >
       <h2 className="text-xl font-semibold mb-4">Stock Data Query</h2>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-medium mb-2">Ticker:</label>
+        <label className="block text-gray-700 text-sm font-medium mb-2">
+          Ticker:
+        </label>
         <input
           type="text"
           value={ticker}
@@ -34,7 +40,9 @@ export const StockForm = ({ onSubmit }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-medium mb-2">Start Date:</label>
+        <label className="block text-gray-700 text-sm font-medium mb-2">
+          Start Date:
+        </label>
         <input
           type="date"
           value={startDate}
@@ -43,7 +51,9 @@ export const StockForm = ({ onSubmit }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-medium mb-2">End Date:</label>
+        <label className="block text-gray-700 text-sm font-medium mb-2">
+          End Date:
+        </label>
         <input
           type="date"
           value={endDate}
@@ -58,7 +68,9 @@ export const StockForm = ({ onSubmit }) => {
           onChange={(e) => setCheckCalculateReturns(e.target.checked)}
           className="form-checkbox h-5 w-5 text-blue-600"
         />
-        <label className="ml-2 text-gray-700 text-sm">Calculate Daily Returns</label>
+        <label className="ml-2 text-gray-700 text-sm">
+          Calculate Daily Returns
+        </label>
       </div>
       <button
         type="submit"

@@ -29,11 +29,15 @@ export async function filterStockData(
   }
 
   const stockData = parsedData.data;
-
-  return stockData.filter((entry) => {
+  // Filtering Data based on passed Filters
+  const data = stockData.filter((entry) => {
     const entryDate = new Date(entry.date);
     const isInRange =
       entryDate >= new Date(startDate) && entryDate <= new Date(endDate);
     return (ticker === "" || entry.ticker === ticker) && isInRange;
   });
+  // Datewise Sorting
+  return data.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
 }
